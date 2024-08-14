@@ -9,7 +9,7 @@ import MainFooter from "@/components/main-footer";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: "300",
+  weight: "400",
 })
 
 export const metadata: Metadata = {

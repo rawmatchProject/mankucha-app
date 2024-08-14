@@ -35,46 +35,60 @@ export default function Login({}: Props) {
   };
 
   return (
-    <main className="place-content-center">
-      <div className="flex flex-col p-5 gap-4 " >
-        <div className="flex flex-col gap-3">
-          <img className="mx-auto my-0" src="/images/logo/purple.png" width={120} alt="Mankucha" />
-          <h1 className="text-center text-2xl text-foreground">Mankucha Dashboard</h1>
-        </div>
-        <div className="flex justify-center">
-          <Form {...form}>
-            <form className="flex flex-col gap-6 w-[380px] max-sm:w-[250px] " onSubmit={form.handleSubmit(onSubmit)}>
+    <main className="min-h-dvh">
+      <div className="my-auto relative top-[-80px]">
+        <div className="flex flex-col bg-secondary pt-10 pb-6 px-5 gap-4 border-solid rounded-xl">
+          <div className="flex flex-col gap-3">
+            <img
+              className="mx-auto my-0"
+              src="/images/logo/purple.png"
+              width={120}
+              alt="Mankucha"
+            />
+            <h1 className="text-center text-2xl text-foreground">
+              Mankucha Dashboard
+            </h1>
+          </div>
+          <div className="flex justify-center">
+            <Form {...form}>
+              <form
+                className="flex flex-col gap-6 w-[380px] max-sm:w-[250px] "
+                onSubmit={form.handleSubmit(onSubmit)}
+              >
+                <FormField
+                  control={form.control}
+                  name="username"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Username</FormLabel>
 
-              <FormField
-                control={form.control}
-                name="username"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Username</FormLabel>
+                      <FormControl>
+                        <Input type="text" {...field} />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
 
-                    <FormControl>
-                      <Input type="text" {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Password</FormLabel>
+                      <FormControl>
+                        <Input type="password" {...field} />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
 
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Password</FormLabel>
-                    <FormControl>
-                      <Input type="password" {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <Button type="submit">Log In</Button>
-            </form>
-          </Form>
+                <Button type="submit">Log In</Button>
+              </form>
+            </Form>
+          </div>
+          <div className="text-center">
+            <p className="text-sm">Copyright@2023 - Mankucha</p>
+          </div>
         </div>
       </div>
     </main>

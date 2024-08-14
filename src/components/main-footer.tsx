@@ -1,12 +1,17 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import React from 'react'
 
 type Props = {}
 
 export default function MainFooter({}: Props) {
+
+  const pathName = usePathname()
+
   return (
-    <footer className='relative p-2 bg-secondary'>
+    <>
+      { pathName !== "/login" && <footer className='relative p-2 bg-secondary'>
       <div>
         <section></section>
         <section>
@@ -21,6 +26,8 @@ export default function MainFooter({}: Props) {
       <div className="text-sm text-center">
         <p>Copyright@2023-2024 - Mankucha</p>
       </div>
-    </footer>
+    </footer>}
+    </>
+    
   )
 }

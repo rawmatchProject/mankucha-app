@@ -77,16 +77,16 @@
   }
 }
 
-body{
+body {
   min-width: 320px;
+  min-height: 100dvh;
 }
 
-main{
-
-  min-height: 100dvh;
+main {
+  display: flex;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  height: 100%;
+  width: 100%;
   overflow: auto;
-
 }
